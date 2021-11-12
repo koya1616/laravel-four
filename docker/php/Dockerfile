@@ -1,4 +1,4 @@
-FROM php:7.2-fpm
+FROM php:8.0-fpm
 
 # install composer
 RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
@@ -14,3 +14,4 @@ RUN apt-get update \
     && docker-php-ext-install pdo_mysql pdo_pgsql mysqli 
 RUN echo "alias ll='ls -la'" >> ~/.bashrc && . ~/.bashrc
 WORKDIR /var/www/html
+
